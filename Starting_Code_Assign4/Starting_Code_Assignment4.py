@@ -51,7 +51,8 @@ while not warehouse.finished():
     solution.append(place_id)
     
    #store movements in arrays in order to use in heuristic
-    previous_location=pod_location[pod-1]
+    retrieved_pod = warehouse.departure_generator.departures[0][0]
+    previous_location = pod_location[retrieved_pod - 1] 
     Next_Configuration[x]=Original_Configuration[x]
     Next_Configuration[x][previous_location-1]=0
     Next_Configuration[x][place_id-1]=pod
